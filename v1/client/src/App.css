@@ -7,11 +7,16 @@ body {
   background: rgb(34, 29, 29);
   text-align: center;
   min-height: 100vh;
+  /* padding: 1em; */
+  border-radius: 5%;
+  /* width: 80%; */
 }
 
-/* .App-container {
-  margin: 1em;
-} */
+.App-pages-container {
+  width: 100%;
+  padding: 1em;
+  /* border-radius: 20%; */
+}
 
 .App-logo {
   height: 40vmin;
@@ -33,19 +38,43 @@ body {
   justify-content: space-around;
   font-size: calc(10px + 2vmin);
   color: white;
+  border-radius: 20% 20% 0 0;
 }
 
 .App-nav {
-  display:inline-block;
-  background-color: brown;
-  flex-direction: column;
-  align-items: center;
+  width: 80%;
+  background-color: rgb(97, 73, 124);
+  flex-direction: row;
   justify-content: space-around;
+  align-items: center;
+  border-radius: 30% 30% 0 0;
+}
+
+.App-nav-item {
+  display: inline-block;
+  background-color: rgb(112, 0, 0);
+  /* flex-direction: row;
+  justify-content: space-around;
+  align-items: center; */
 }
 
 .App-main {
-  background-color: rgb(48, 48, 145);
+  background-color: rgb(59, 26, 102);
   min-height: 50vh;
+}
+
+.App-tabs-orbit {
+  background-image: radial-gradient(circle at center, rgb(211, 42, 169) 5%, rgb(59, 26, 102) 75%);
+  min-height: 70vh;
+  color: white;
+  padding: 5em;
+}
+
+.App-tabs-form {
+  background-image: linear-gradient(rgb(59, 26, 102), rgb(211, 42, 169));
+  min-height: 70vh;
+  color: white;
+  padding: 5em;
 }
 
 .App-footer {
