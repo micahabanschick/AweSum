@@ -14,5 +14,5 @@ class QuizesContainer extends Component {
         )
     }
 }
-
+                    
 export default QuizesContainer
