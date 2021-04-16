@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# AweSum
+
+This product is an educational application that facilitates a basic mathematics quiz for young learners
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
