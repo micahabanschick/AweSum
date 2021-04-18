@@ -17,7 +17,14 @@ const QuizOrbit = (props) => {
 
     return (
         <Container style={orbitStyles}>
-            {quiz.questions[0].num1} + {quiz.questions[0].num2} = {quiz.questions[0].sum}
+            <h2>
+                {quiz.questions[0].correctNum1} + {quiz.questions[0].correctNum2} = {quiz.questions[0].correctSum}
+            </h2>
+            <ul>
+                <li>Wrong Answer 1: {quiz.questions[0].wrongSum1}</li>
+                <li>Wrong Answer 2: {quiz.questions[0].wrongSum2}</li>
+                <li>Wrong Answer 3: {quiz.questions[0].wrongSum3}</li>
+            </ul>
         </Container>
     )
 }
