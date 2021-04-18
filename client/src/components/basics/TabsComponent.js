@@ -16,7 +16,7 @@ const TabsComponent = (props) => {
         onSelect={(k) => setKey(k)}
       >
         <Tab eventKey="home" title="Overview" className="App-tabs-overview">
-            <p>asgddfsdfsdfsdfslkdsjnglksjdfhglkdsjfnhglkjdshfgkjlhslkgjhsaldkjh</p>
+            <h2 style={{color: 'white'}} >Click 'Orbit' or 'Form' to start the quiz!</h2>
         </Tab>
         <Tab eventKey="orbit" title="Orbit" className="App-tabs-orbit">
           <QuizOrbit />

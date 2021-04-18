@@ -15,6 +15,7 @@ body {
 .App-pages-container {
   width: 100%;
   padding: 1em;
+  min-height: 100vh;
   /* border-radius: 20%; */
 }
 
@@ -60,7 +61,7 @@ body {
 
 .App-main {
   background-color: rgb(59, 26, 102);
-  min-height: 50vh;
+  min-height: 85vh;
 }
 
 .App-tabs-orbit {
@@ -79,6 +80,13 @@ body {
 
 .App-footer {
   background-color: grey;
+  /* display: flex;
+  position: absolute;
+  bottom: 0;
+  justify-content: space-around;
+  align-items: center; */
+  /* width: 80%; */
+  /* margin: 0; */
 }
 
 .nav-items {
@@ -89,6 +97,11 @@ body {
   align-items: center;
   min-height: 10vh;
 }
+
+/* .list-group {
+  color: rgb(255, 0, 0);
+  padding: 1em;
+} */
 
 .App-link {
   color: #61dafb;
