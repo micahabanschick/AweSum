@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/AweSum/static/css/main.0f229cee.chunk.css",
+    "main.js": "/AweSum/static/js/main.18024c10.chunk.js",
+    "main.js.map": "/AweSum/static/js/main.18024c10.chunk.js.map",
+    "runtime-main.js": "/AweSum/static/js/runtime-main.71afe400.js",
+    "runtime-main.js.map": "/AweSum/static/js/runtime-main.71afe400.js.map",
+    "static/css/2.4c97ca4f.chunk.css": "/AweSum/static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.b83eb797.chunk.js": "/AweSum/static/js/2.b83eb797.chunk.js",
+    "static/js/2.b83eb797.chunk.js.map": "/AweSum/static/js/2.b83eb797.chunk.js.map",
+    "index.html": "/AweSum/index.html",
+    "static/css/2.4c97ca4f.chunk.css.map": "/AweSum/static/css/2.4c97ca4f.chunk.css.map",
+    "static/css/main.0f229cee.chunk.css.map": "/AweSum/static/css/main.0f229cee.chunk.css.map",
+    "static/js/2.b83eb797.chunk.js.LICENSE.txt": "/AweSum/static/js/2.b83eb797.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.71afe400.js",
+    "static/css/2.4c97ca4f.chunk.css",
+    "static/js/2.b83eb797.chunk.js",
+    "static/css/main.0f229cee.chunk.css",
+    "static/js/main.18024c10.chunk.js"
+  ]
+}
