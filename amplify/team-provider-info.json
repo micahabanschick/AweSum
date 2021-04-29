@@ -1,0 +1,23 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-awesum-dev-84109-authRole",
+            "UnauthRoleArn": "arn:aws:iam::506110906122:role/amplify-awesum-dev-84109-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::506110906122:role/amplify-awesum-dev-84109-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-awesum-dev-84109-deployment",
+            "UnauthRoleName": "amplify-awesum-dev-84109-unauthRole",
+            "StackName": "amplify-awesum-dev-84109",
+            "StackId": "arn:aws:cloudformation:us-east-1:506110906122:stack/amplify-awesum-dev-84109/32072460-a8e8-11eb-a3ee-0acaf3694d17",
+            "AmplifyAppId": "d17qqia947gkyf"
+        },
+        "categories": {
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "d17qqia947gkyf",
+                    "type": "manual"
+                }
+            }
+        }
+    }
+}

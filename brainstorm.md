@@ -13,6 +13,24 @@
 
 3. form is in <ul>
 
+4. FadeTransition between questions
+    i. sample code:
+        <!-- import FadeTransition from "../src/transitions/fadeTransition";
+        ...
+        {/*Applying to Login Box*/}
+        <FadeTransition isOpen={this.state.isLoginOpen} duration={500}>
+        <div className="box-container">
+            <LoginBox />
+        </div>
+        </FadeTransition>
+        {/*Applying to Register Box*/}
+        <FadeTransition isOpen={this.state.isRegisterOpen} duration={500}>
+        <div className="box-container">
+            <RegisterBox />
+        </div>
+        </FadeTransition>
+        ... -->
+
 ## Orbit Component
 
 1. 
