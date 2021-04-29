@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/AweSum/static/css/main.0f229cee.chunk.css",
-    "main.js": "/AweSum/static/js/main.18024c10.chunk.js",
-    "main.js.map": "/AweSum/static/js/main.18024c10.chunk.js.map",
+    "main.js": "/AweSum/static/js/main.ca441b08.chunk.js",
+    "main.js.map": "/AweSum/static/js/main.ca441b08.chunk.js.map",
     "runtime-main.js": "/AweSum/static/js/runtime-main.71afe400.js",
     "runtime-main.js.map": "/AweSum/static/js/runtime-main.71afe400.js.map",
     "static/css/2.4c97ca4f.chunk.css": "/AweSum/static/css/2.4c97ca4f.chunk.css",
@@ -18,6 +18,6 @@
     "static/css/2.4c97ca4f.chunk.css",
     "static/js/2.b83eb797.chunk.js",
     "static/css/main.0f229cee.chunk.css",
-    "static/js/main.18024c10.chunk.js"
+    "static/js/main.ca441b08.chunk.js"
   ]
 }
