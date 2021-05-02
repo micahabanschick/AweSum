@@ -20,21 +20,22 @@ class QuizOrbit extends React.Component {
     quiz = new Quiz(6)
     
     
-    // orbitStyles = {
-    //     backgroundColor: 'white',
-    //     color: 'black',
-    //     borderRadius: '50%',
-    //     minHeight: '50vh',
-    // }
-    
-    formStyles = {
+    orbitStyles = {
         backgroundColor: 'white',
         color: 'black',
-        borderRadius: '3%',
-        padding: '1em',
+        borderRadius: '50%',
         minHeight: '50vh',
         listStyle: 'none'
     }
+    
+    // formStyles = {
+    //     backgroundColor: 'white',
+    //     color: 'black',
+    //     borderRadius: '3%',
+    //     padding: '1em',
+    //     minHeight: '50vh',
+    //     listStyle: 'none'
+    // }
 
     // get formStyles() {
     //     return this.formStyles 

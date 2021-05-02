@@ -21,13 +21,6 @@ class QuizForm extends React.Component {
     quiz = new Quiz(6)
     
     
-    // orbitStyles = {
-    //     backgroundColor: 'white',
-    //     color: 'black',
-    //     borderRadius: '50%',
-    //     minHeight: '50vh',
-    // }
-    
     formStyles = {
         backgroundColor: 'white',
         color: 'black',
