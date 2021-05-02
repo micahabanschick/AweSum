@@ -21,21 +21,19 @@ class QuizOrbit extends React.Component {
     
     
     orbitStyles = {
+        // display: 'grid',
+        // gridTemplateColumns: 'auto auto auto',
         backgroundColor: 'white',
         color: 'black',
         borderRadius: '50%',
         minHeight: '50vh',
         listStyle: 'none'
     }
-    
-    // formStyles = {
-    //     backgroundColor: 'white',
-    //     color: 'black',
-    //     borderRadius: '3%',
-    //     padding: '1em',
-    //     minHeight: '50vh',
-    //     listStyle: 'none'
-    // }
+
+    gItems = {
+        // display: 'grid',
+        border: 'none',
+    }
 
     // get formStyles() {
     //     return this.formStyles 
@@ -45,14 +43,14 @@ class QuizOrbit extends React.Component {
     //     this.formStyles = styles
     // }
     
-    questionStyles = {
-        backgroundColor: 'white',
-        color: 'black',
-        borderRadius: '3%',
-        padding: '2em',
-        // minHeight: '50vh',
-        listStyle: 'none'
-    }
+    // questionStyles = {
+    //     backgroundColor: 'white',
+    //     color: 'black',
+    //     borderRadius: '3%',
+    //     padding: '2em',
+    //     // minHeight: '50vh',
+    //     listStyle: 'none'
+    // }
     
     alertClicked = () => {
         this.setState(prevState => {
@@ -99,12 +97,22 @@ class QuizOrbit extends React.Component {
     }
 
     shuffleList = () => {
-        let listGroup = document.querySelector('.list-group');
+        let listGroup = document.querySelectorAll('.list-group');
         for (let i = listGroup.children.length; i >= 0; i--) {
             listGroup.appendChild(listGroup.children[Math.random() * i | 0]);
             console.log(listGroup.children[1]);
             listGroup.children[1].classList.remove('active') 
         }
+
+        // let listGroups = document.querySelectorAll('.list-group');
+        // console.log(listGroups);
+        // // colors.push(colors.splice(colors.indexOf('blue'), 1).pop());
+        // for (let i = listGroups.length; i >= 0; i--) {
+        //     let randomList = listGroups[Math.random() * i | 0];
+        //     listGroups.push(listGroups.splice(listGroups.indexOf(randomList), 1).pop());
+        //     console.log(listGroups[1]);
+        //     listGroups[1].classList.remove('active') 
+        // }
     }
 
     showQuestion() {
@@ -115,26 +123,38 @@ class QuizOrbit extends React.Component {
         console.log(this.quiz)
         if (this.state.count < this.quiz.questions.length) {
             return (
-                <Container style={this.formStyles}>
-                    <Form onSubmit={this.handleSubmit}>
-                        <h3>question {this.state.count} of 5</h3>
-                        <h2 style={this.questionStyles}>
-                            What is the sum of {this.quiz.questions[this.state.count].correctNum1} + {this.quiz.questions[this.state.count].correctNum2}
-                        </h2>
-                        <br/><br/>
-                        <ListGroup>
-                            <ListGroup.Item action href="#link1" onClick={this.handleChange}>
+                <Container style={this.orbitStyles}>
+                    <Form onSubmit={this.handleSubmit}>                        
+                        <ListGroup horizontal="sm" className="my-2" key={0} style={this.gItems}>
+                            <ListGroup.Item className="border-0" action href="#disabled" onClick={this.handleChange} disabled></ListGroup.Item>
+                            <ListGroup.Item className="border-0" action href="#link1" onClick={this.handleChange}>
                                 {this.quiz.questions[this.state.count].wrongSum1}
                             </ListGroup.Item>
-                            <ListGroup.Item action href="#link2" onClick={this.handleChange}>
+                            <ListGroup.Item className="border-0" action href="#disabled" onClick={this.handleChange} disabled></ListGroup.Item>
+                        </ListGroup>
+                        <br/><br/>
+                        <ListGroup horizontal="sm" className="my-2" key={1}>
+                            <ListGroup.Item className="border-0" action href="#link2" onClick={this.handleChange}>
                                 {this.quiz.questions[this.state.count].wrongSum2}
                             </ListGroup.Item>
-                            <ListGroup.Item action href="#link3" onClick={this.handleChange}>
+                            <ListGroup.Item className="border-0" action href="#submit" onClick={this.handleChange} disabled>
+                                <i>Question {this.state.count} of 5</i>
+                                <br/>
+                                <b>
+                                    {this.quiz.questions[this.state.count].correctNum1} + {this.quiz.questions[this.state.count].correctNum2}
+                                </b>
+                            </ListGroup.Item>
+                            <ListGroup.Item className="border-0" action href="#link3" onClick={this.handleChange}>
                                 {this.quiz.questions[this.state.count].wrongSum3}
                             </ListGroup.Item>
-                            <ListGroup.Item action href="#" onClick={this.handleChange}>
+                        </ListGroup>
+                        <br/><br/>
+                        <ListGroup horizontal="sm" className="my-2" key={2}>
+                            <ListGroup.Item className="border-0" action href="#disabled" onClick={this.handleChange} disabled></ListGroup.Item>
+                            <ListGroup.Item className="border-0" action href="#link3" onClick={this.handleChange}>
                                 {this.quiz.questions[this.state.count].correctSum}
                             </ListGroup.Item>
+                            <ListGroup.Item className="border-0" action href="#disabled" onClick={this.handleChange} disabled></ListGroup.Item>
                         </ListGroup>
                         <br/>
                         <Button variant="primary" type="submit">Submit</Button>

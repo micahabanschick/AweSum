@@ -69,6 +69,29 @@ body {
   min-height: 70vh;
   color: white;
   padding: 5em;
+} 
+
+.App-tabs-orbit .container {
+  display: grid;
+  /* display: grid; */
+  grid-gap: 50px;
+  /* color: white; */
+  padding: 5em;
+}
+
+.App-tabs-orbit .container .form {
+  display: inline-grid;
+  /* justify-content: center; */
+  /* color: white; */
+  /* width: 80%; */
+  /* padding: 5em; */
+}
+
+.App-tabs-orbit .container .form .list-group, .App-tabs-orbit .container .form .list-group .list-group-item {
+  margin: 0;
+  border: none;
+  /* color: red; */
+  /* padding: 2em; */
 }
 
 .App-tabs-form {
