@@ -76,23 +76,24 @@ body {
   /* display: grid; */
   grid-gap: 50px;
   /* color: white; */
-  padding: 5em;
+  padding: 1em;
 }
 
 .App-tabs-orbit .container .form {
-  display: inline-grid;
-  /* justify-content: center; */
+  display: flex;
+  justify-content: center;
   /* color: white; */
-  /* width: 80%; */
+  width: 100%;
+  /* border-style: solid; */
   /* padding: 5em; */
 }
 
-.App-tabs-orbit .container .form .list-group, .App-tabs-orbit .container .form .list-group .list-group-item {
+/* .App-tabs-orbit .container .form .list-group, .App-tabs-orbit .container .form .list-group .list-group-item {
   margin: 0;
   border: none;
-  /* color: red; */
-  /* padding: 2em; */
-}
+  color: whit;
+  padding: 2em;
+} */
 
 .App-tabs-form {
   background-image: linear-gradient(rgb(59, 26, 102), rgb(211, 42, 169));

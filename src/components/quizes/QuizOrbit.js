@@ -3,7 +3,7 @@ import React from 'react'
 import Quiz from './Quiz'
 import Container from 'react-bootstrap/Container'
 import ListGroup from 'react-bootstrap/ListGroup'
-import Form from 'react-bootstrap/Form'
+// import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
 class QuizOrbit extends React.Component {
@@ -21,36 +21,59 @@ class QuizOrbit extends React.Component {
     
     
     orbitStyles = {
-        // display: 'grid',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
         // gridTemplateColumns: 'auto auto auto',
         backgroundColor: 'white',
         color: 'black',
         borderRadius: '50%',
-        minHeight: '50vh',
-        listStyle: 'none'
+        minHeight: '60vh',
+        listStyle: 'none',
+        // textAlign: "center",
     }
 
-    gItems = {
-        // display: 'grid',
+    gItem = {
+        // display: 'flex',
         border: 'none',
+        margin: 'auto',
+        padding: '0',
+        // textAlign: 'center',
+        justifyContent: 'center',
     }
 
-    // get formStyles() {
-    //     return this.formStyles 
-    // }
+    gLeftItem = {
+        display: 'flex',
+        border: 'none',
+        margin: 'auto',
+        padding: '0',
+        // textAlign: 'center',
+        justifyContent: 'flex-start',
+    }
 
-    // set formStyles(styles) {
-    //     this.formStyles = styles
-    // }
-    
-    // questionStyles = {
-    //     backgroundColor: 'white',
-    //     color: 'black',
-    //     borderRadius: '3%',
-    //     padding: '2em',
-    //     // minHeight: '50vh',
-    //     listStyle: 'none'
-    // }
+    gRightItem = {
+        display: 'flex',
+        border: 'none',
+        margin: 'auto',
+        padding: '0',
+        // textAlign: 'center',
+        justifyContent: 'flex-end',
+    }
+
+    gOuterRow = {
+        width: "30%",
+        height: "30%",
+        margin: "auto",
+    }
+
+    gInnerRow = {
+        display: "flex",
+        // justifyContent: "space-between",
+        width: "100%",
+        height: "40%",
+        margin: "auto 0",
+        // padding: "20",
+    }
     
     alertClicked = () => {
         this.setState(prevState => {
@@ -96,13 +119,29 @@ class QuizOrbit extends React.Component {
         // alert('You clicked the third ListGroupItem');
     }
 
+    optionsArray = [
+        this.quiz.questions[this.state.count].correctSum, 
+        this.quiz.questions[this.state.count].wrongSum1, 
+        this.quiz.questions[this.state.count].wrongSum2, 
+        this.quiz.questions[this.state.count].wrongSum3
+    ];
+
     shuffleList = () => {
-        let listGroup = document.querySelectorAll('.list-group');
-        for (let i = listGroup.children.length; i >= 0; i--) {
-            listGroup.appendChild(listGroup.children[Math.random() * i | 0]);
-            console.log(listGroup.children[1]);
-            listGroup.children[1].classList.remove('active') 
+        let listGroups = document.querySelectorAll('.list-group');
+        console.log(listGroups)
+        console.log(this.optionsArray)
+        for (let i = this.optionsArray.length - 1; i >= 0; i--) {
+            this.optionsArray.push(this.optionsArray.splice(Math.random() * i | 0, 1)[0]);
+            console.log(this.optionsArray);
+            console.log(i)
+            // listGroups[i].children.forEach(item => item.classList.remove('active'))
+
+            for (let j = 0; j < listGroups[i].children.length; j++) {
+                listGroups[i].children[j].classList.remove('active')
+            }
         }
+        // listGroups.forEach(group => group.children.classList.remove('active'))
+        // [1].classList.remove('active') 
 
         // let listGroups = document.querySelectorAll('.list-group');
         // console.log(listGroups);
@@ -123,44 +162,47 @@ class QuizOrbit extends React.Component {
         console.log(this.quiz)
         if (this.state.count < this.quiz.questions.length) {
             return (
+                <div>
                 <Container style={this.orbitStyles}>
-                    <Form onSubmit={this.handleSubmit}>                        
-                        <ListGroup horizontal="sm" className="my-2" key={0} style={this.gItems}>
-                            <ListGroup.Item className="border-0" action href="#disabled" onClick={this.handleChange} disabled></ListGroup.Item>
-                            <ListGroup.Item className="border-0" action href="#link1" onClick={this.handleChange}>
-                                {this.quiz.questions[this.state.count].wrongSum1}
-                            </ListGroup.Item>
-                            <ListGroup.Item className="border-0" action href="#disabled" onClick={this.handleChange} disabled></ListGroup.Item>
-                        </ListGroup>
-                        <br/><br/>
-                        <ListGroup horizontal="sm" className="my-2" key={1}>
-                            <ListGroup.Item className="border-0" action href="#link2" onClick={this.handleChange}>
-                                {this.quiz.questions[this.state.count].wrongSum2}
-                            </ListGroup.Item>
-                            <ListGroup.Item className="border-0" action href="#submit" onClick={this.handleChange} disabled>
-                                <i>Question {this.state.count} of 5</i>
-                                <br/>
-                                <b>
-                                    {this.quiz.questions[this.state.count].correctNum1} + {this.quiz.questions[this.state.count].correctNum2}
-                                </b>
-                            </ListGroup.Item>
-                            <ListGroup.Item className="border-0" action href="#link3" onClick={this.handleChange}>
-                                {this.quiz.questions[this.state.count].wrongSum3}
-                            </ListGroup.Item>
-                        </ListGroup>
-                        <br/><br/>
-                        <ListGroup horizontal="sm" className="my-2" key={2}>
-                            <ListGroup.Item className="border-0" action href="#disabled" onClick={this.handleChange} disabled></ListGroup.Item>
-                            <ListGroup.Item className="border-0" action href="#link3" onClick={this.handleChange}>
-                                {this.quiz.questions[this.state.count].correctSum}
-                            </ListGroup.Item>
-                            <ListGroup.Item className="border-0" action href="#disabled" onClick={this.handleChange} disabled></ListGroup.Item>
-                        </ListGroup>
-                        <br/>
-                        <Button variant="primary" type="submit">Submit</Button>
-                    </Form>
+                                       
+                    <ListGroup horizontal="sm" className="my-2" key={0} style={this.gOuterRow}>
+                        <ListGroup.Item style={this.gItem} action href="#disabled" onClick={this.handleChange} disabled></ListGroup.Item>
+                        <ListGroup.Item style={this.gItem} className="" action href="#link1" onClick={this.handleChange}>
+                            {this.optionsArray[0]}
+                        </ListGroup.Item>
+                        <ListGroup.Item style={this.gItem} className="" action href="#disabled" onClick={this.handleChange} disabled></ListGroup.Item>
+                    </ListGroup>
+                    
+                    <ListGroup horizontal="sm" className="my-2" key={1} style={this.gInnerRow}>
+                        <ListGroup.Item style={this.gLeftItem} className="" action href="#link2" onClick={this.handleChange}>
+                            {this.optionsArray[1]}
+                        </ListGroup.Item>
+                        <ListGroup.Item style={this.gItem} className="" action href="#submit" onClick={this.handleChange} disabled>
+                            <i>Question {this.state.count} of 5</i>
+                            <br/>
+                            <b>
+                                {this.quiz.questions[this.state.count].correctNum1} + {this.quiz.questions[this.state.count].correctNum2}
+                            </b>
+                        </ListGroup.Item>
+                        <ListGroup.Item style={this.gRightItem} className="" action href="#link3" onClick={this.handleChange}>
+                            {this.optionsArray[2]}
+                        </ListGroup.Item>
+                    </ListGroup>
+                    
+                    <ListGroup horizontal="sm" className="my-2" key={2} style={this.gOuterRow}>
+                        <ListGroup.Item style={this.gItem} className="" action href="#disabled" onClick={this.handleChange} disabled></ListGroup.Item>
+                        <ListGroup.Item style={this.gItem} className="" action href="#link3" onClick={this.handleChange}>
+                            {this.optionsArray[3]}
+                        </ListGroup.Item>
+                        <ListGroup.Item style={this.gItem} className="" action href="#disabled" onClick={this.handleChange} disabled></ListGroup.Item>
+                    </ListGroup>
+                   
+                    </Container>
+                    {
+                        <Button variant="primary" type="submit" onClick={this.handleSubmit}>Submit</Button>
+                    }
                     {this.shuffleList}
-                </Container>
+                </div>
             )
         } else {
             return (
